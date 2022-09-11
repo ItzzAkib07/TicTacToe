@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: "Merriweather Sans",sans-serif;
+    color:#4c6986;
+}
+
+.wrapper{
+    max-width: 1440px;
+    height:800px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding:70px;
+}
+
+.title{
+    max-width: 500px;
+}
+
+h1{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.restart{
+    width: 175px;
+    height:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid #4c6986;
+    transition:all 0.2s ease;
+    font-weight: bold;
+    margin-top:30px;
+}
+
+.restart:hover{
+    background: #4c6986;
+    color:white;
+}
+
+.header{
+    display:flex;
+    color: #9a9a9a;
+    font-size:24px;
+}
+
+.header .player-x{
+    flex:1;
+    border-bottom:5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.header .player-o{
+    flex:1;
+    border-bottom:5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.player-x.active{
+    color:#42BED7;
+    border-color:#42BED7;
+}
+
+.player-o.active{
+    color:#D7BAF8;
+    border-color:#D7BAF8;
+}
+
+.game{
+    width:500px;
+    height:500px;
+    display:flex;
+    flex-direction:column;
+}
+
+
+.board{
+   
+    display:grid;
+    /* fr stands for fraction */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 0px;
+    flex-grow:1;
+    padding:10px;
+}
+.board-tile{
+    display:flex;
+    justify-content: center;
+    cursor:pointer;
+    align-items:center;
+    font-size:80px;
+    background:white;
+}
+
+.board-tile:not(:nth-child(3n)) {
+    border-right:3px solid rgba(82, 84, 87, 0.315);
+}
+
+.board-tile:not(:nth-last-child(-n + 3)) {
+    border-bottom:3px solid rgba(82, 84, 87, 0.315);
+}
+
+.board-tile:hover{
+    background:#eee;
+}
+
+.tile-x{
+    font-weight: bold;
+    color:#42BED7;
+}
+
+.tile-o{
+    font-weight: bold;
+
+    color:#D7BAF8;
+}
+
+.tile-winner span{
+    color:green;
+}
+
+@media only screen and (max-width:1200px){
+    .wrapper{
+        flex-direction:column;
+    }
+
+    .left{
+        margin-bottom:50px;
+    }
+
+    .footer-heart{
+        padding-top:100px;
+    }
+
+}
+
+@media only screen and (max-width:600px){
+    h1{
+        font-size:40px;
+    }
+
+    .game{
+        height:350px;
+        width:350px;
+    }
+
+    .footer-heart{
+        font-size:10px;
+        margin:0px;
+        padding-top:0px;
+    }
+}
+
+.footer-heart{text-align:center;font-family: open sans, sans-serif; margin-bottom:50px; margin-top:110px;}
+
+.footer-heart a{border-bottom: 1px solid #453886;color: #453886;padding-bottom: .25em; text-decoration: none;}
+
+.footer-heart a:hover{color:#2196f3; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: .3em;
+  text-decoration: none;}
+
+.emoji{vertical-align: middle;}
